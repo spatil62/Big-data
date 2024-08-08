@@ -1,6 +1,6 @@
 # Lab 01
 
-For ITMD 521, Big Data Technologies, week-04, lab-01, chapter-02
+Big Data Technologies
 
 ## Objectives
 
@@ -46,9 +46,5 @@ Place screenshot here
 Place Scala screenshot here
 ![*sbt*](./images/image3.png 'sbt')
 
-## Deliverables
 
-Using this template, under the `itmd-521` directory in your local repository, create a sub-directory named `labs`. Under that create another subdirectory named `week-04` and place this Readme.md file in that directory along with a folder for images.
-
-You also need to include your python and scala code and the `build.sbt` file. Push the code to your remote GitHub repo and submit the URL to this location in Blackboard.
 
