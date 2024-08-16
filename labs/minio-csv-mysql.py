@@ -9,15 +9,7 @@ import sys
 
 # Required configuration to load S3/Minio access credentials securely - no hardcoding keys into code
 conf = SparkConf()
-conf.set('spark.jars.packages', 'org.apache.hadoop:hadoop-aws:3.2.0')
-conf.set('spark.hadoop.fs.s3a.aws.credentials.provider', 'org.apache.hadoop.fs.s3a.AnonymousAWSCredentialsProvider')
-
-conf.set('spark.hadoop.fs.s3a.access.key', os.getenv('SECRETKEY'))
-conf.set('spark.hadoop.fs.s3a.secret.key', os.getenv('ACCESSKEY'))
-conf.set("spark.hadoop.fs.s3a.endpoint", "http://minio1.service.consul:9000")
-conf.set("fs.s3a.path.style.access", "true")
-conf.set("fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
-conf.set("fs.s3a.connection.ssl.enabled", "false")
+#removed configuration 
 
 # Create SparkSession Object - tell the cluster the FQDN of the host system)
 spark = SparkSession.builder.appName("JRH read minio test").config('spark.driver.host','spark-edge-vm0.service.consul').config(conf=conf).getOrCreate()
@@ -48,19 +40,10 @@ splitDF = df.withColumn('WeatherStation', df['_c0'].substr(5, 6)) \
 .withColumn('AtmosphericPressure', df['_c0'].substr(100, 5).cast('float')/ 10) \
 .withColumn('APQualityCode', df['_c0'].substr(105, 1).cast(IntegerType())).drop('_c0')
 
-# The coalese() function
-# https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.coalesce.html
-# This will collapse your DataFrame into a single partition
-#writeDF = splitDF.coalesce(1)
+
 splitDF.printSchema()
 splitDF.show(5)
 
-# This is the documentation for all DataFrameWriter types
-# https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrameWriter.html
-#https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrameWriter.parquet.html#pyspark.sql.DataFrameWriter.parquet
-splitDF.write.parquet("s3a://ssp/30-parquet")
-splitDF.write.csv("s3a://ssp/30-csv")
+splitDF.write.parquet("s3:30-parquet")
+splitDF.write.csv("s3:30-csv")
 
-# Writing out to MySQL your DataFrame results
-# https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrameWriter.save.html
-#(splitDF.write.format("jdbc").option("url","jdbc:mysql://system31.service.consul:3306/ncdc").option("driver","com.mysql.cj.jdbc.Driver").option("dbtable","thirty").option("user",os.getenv('MYSQLUSER')).option("truncate",True).mode("overwrite").option("password", os.getenv('MYSQLPASS')).save())
