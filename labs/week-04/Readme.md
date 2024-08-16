@@ -29,22 +29,13 @@ You are to take the sample code listed in Chapter 02, the MnMCount for both Pyth
 +-----+------+----------+
 ```
 
-Make sure the `vagrant@your-initials` is in the screenshot
 
-### PySpark ScreenShot
-![*spark*](./images/Image1.png 'spark')
 
-Place PySpark screenshot here
+### PySpark 
 
-### SBT build Output Screenshot
-
-Place screenshot here
-![*sbt*](./images/Image2.png 'sbt')
+### SBT build Output 
 
 ### Spark Scala ScreenShot
-
-Place Scala screenshot here
-![*sbt*](./images/image3.png 'sbt')
 
 
 
