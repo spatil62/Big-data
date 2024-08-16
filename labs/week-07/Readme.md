@@ -11,12 +11,11 @@
 ## Assignment Setup
 
 - We will be using the departuredelays files located at:
-  - `~/LearningSparkV2/databricks-datasets/learning-spark-v2/flights`
   - See Python sample below for how to structure commandline input of datasources
   - Note do not use the notebook file provided, we want to challenge you to be able to build this yourself
   - All Code will be created on your local system, pushed to GitHub, and then pulled to your Vagrant Box
-  - You will create one Pyspark file named: `assignment-03.py`
-  - You will create on Scala file named: `assignment-03.scala`
+  - You will create one Pyspark file 
+  - You will create on Scala file 
     - And the neccesary `sbt` build infrastrucutre
   - You will continue to load data via a commandline argument passing in the path of the file
 
@@ -24,9 +23,9 @@
 
 When reading data you can use the generic `spark.read.format` command, but I recommend to use the domain specific functions.
 
-* DataFrameReader - [parquet](https://spark.apache.org/docs/3.2.0/api/python/reference/api/pyspark.sql.DataFrameReader.parquet.html "webpage for pyspark api parquet")
-* DataFrameReader - [json](https://spark.apache.org/docs/3.2.0/api/python/reference/api/pyspark.sql.DataFrameReader.json.html "webpage for pyspark api json")
-* DataFrameReader - [Scala](https://spark.apache.org/docs/3.2.0/api/scala/org/apache/spark/sql/DataFrameReader.html "webpage for Spark Scala API")
+* DataFrameReader - [parquet]
+* DataFrameReader - [json]
+* DataFrameReader - [Scala]
 
 ## Assignment Details - Part I
 
@@ -39,12 +38,9 @@ Using the departuredelays.csv file, in a single file called assignment-03.py con
 
 ### Part I - Screenshot
 ### pyspark
-![*first*](./images/first.png 'first')
-![*second*](./images/second.png 'second')
 
 ### scala
-![*scalafirst*](./images/scalafirst.png 'scalafirst')
-![*scalasecond*](./images/scalasecond.png 'scalasecond')
+
 
 ## Assignment Details - Part II
 
@@ -55,10 +51,10 @@ Using the departuredelays.csv file, in a single file called assignment-03.py con
 
 ### Part II - Screenshot
 ### pyspark
-![*teamview*](./images/third.png 'third')
+
 
 ### scala 
-![*teamview*](./images/scalathree.png 'third')
+
 
 ## Assignment Details - Part III
 
@@ -80,17 +76,6 @@ Using the `departuredelays` parquet file you created part III, read the content 
 * Save as type Parquet 
 
 ### Part IV - Screenshot
-### pyspark
-![*data*](./images/six.png 'six')
 
 ### scala
-![*data*](./images/scalafour.png 'four')
 
-### Deliverable
-
-Create a sub-folder named: `week-07` under the `itmd-521` folder. Place all deliverables there.
-Submit to Blackboard the URL to the folder in your GitHub repo.  I will clone your code and run it to test the functionality. I don't need the datasets as I will have them already.
-
-Submit to Blackboard the URL to the folder in your GitHub repo.  I will clone your code and run it to test the functionality. I don't need the datasets as I will have them configured in the example-data directory -- path is important.
-
-Due at the **Start of class** March 02nd 8:30 am
