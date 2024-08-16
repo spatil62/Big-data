@@ -24,7 +24,7 @@ At the conclusion of this lab you will have built Spark applciations in Python a
 
 ## Assignment Details
 
-- In your local Git Repo, create a folder named **labs** under the `itmd-521` folder and create a sub-folder **week-05** and place this Readme.md template in that directory along with the required pieces of code
+- In your local Git Repo, create a folder named **labs** under the folder and create a sub-folder **week-05** and place this Readme.md template in that directory along with the required pieces of code
   - You will create two programs, one in Python and one in Scala
     - Python: week-05.py
     - Scala: week-05.scala
@@ -32,49 +32,27 @@ At the conclusion of this lab you will have built Spark applciations in Python a
     - First **infer the schema** and read the csv file
     - Second programmatically use **StructFields** to create and attach a schema and read the csv file
     - Third attach a schema via a DDL and read the csv file
+      
 - After each read operation include the function `printSchema()`
-  - [printSchema()](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.printSchema.html "pyspark printschema web page")
-  - [printSchema](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html#printSchema():Unit "scala pyspark API")
+
 - Also use the `.count()` function to display the number of records in each DataFrame
-  - [.count()](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html "webapge to Scala API")
-  - [count() - Pyspark](https://spark.apache.org/docs/3.2.0/api/python/reference/api/pyspark.sql.DataFrame.count.html "Pyspark webapge for API")  
+  
+### printSchema inferred in Python
 
-### Screen Shots
 
-Add the required screenshots here:
+### printSchema programmatically in Python
 
-### Screenshot of the printSchema inferred in Python
-![*inferred in python*](./images/pybasic1.png 'inferred in python')
 
-Screenshot goes here
+### printSchema via DDL in Python
 
-### Screenshot of the printSchema programmatically in Python
-![*programatically in python*](./images/pybasic2.png 'programatically in python')
 
-Screenshot goes here
+### printSchema inferred in Scala
 
-### Screenshot of the printSchema via DDL in Python
-![*DLL in python*](./images/pybasic3.png 'DLL in python')
 
-Screenshot goes here
+### printSchema programmatically in Scala
 
-### Screenshot of the printSchema inferred in Scala
-![*inferred in scala*](./images/basic1.png 'inferred in scala')
 
-Screenshot goes here
+### printSchema via DDL in Scala
 
-### Screenshot of the printSchema programmatically in Scala
-![*programatically in scala*](./images/basic2.png 'programatically in scala')
 
-Screenshot goes here
 
-### Screenshot of the printSchema via DDL in Scala
-![*DLL in scala*](./images/basic3.png 'DLL in scala')
-
-Screenshot goes here
-
-### Deliverable
-
-Submit to Blackboard the URL to the folder in your GitHub repo.  I will clone your code, compile it, and run it to test the functionality. Include your `build.sbt` file as well, but not your build artifacts. 
-
-Due at the **Start of class** February 16th 8:30 am
