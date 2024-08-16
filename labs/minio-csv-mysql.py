@@ -15,7 +15,7 @@ conf = SparkConf()
 spark = SparkSession.builder.appName("JRH read minio test").config('spark.driver.host','spark-edge-vm0.service.consul').config(conf=conf).getOrCreate()
 
 # Read the datatype into a DataFrame
-df = spark.read.csv('s3a://itmd521/30.txt')
+df = spark.read.csv('s3:30.txt')
 
 # Custom code needed to split the original source -- it has a column based delimeter
 # Each record is a giant string - with predefined widths being the columns
