@@ -12,7 +12,7 @@ conf = SparkConf()
 #removed configuration 
 
 # Create SparkSession Object - tell the cluster the FQDN of the host system)
-spark = SparkSession.builder.appName("JRH read minio test").config('spark.driver.host','spark-edge-vm0.service.consul').config(conf=conf).getOrCreate()
+spark = SparkSession.builder.appName("JRH read minio test").config('spark.driver.host','').config(conf=conf).getOrCreate()
 
 # Read the datatype into a DataFrame
 df = spark.read.csv('s3:30.txt')
