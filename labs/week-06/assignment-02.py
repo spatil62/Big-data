@@ -113,38 +113,6 @@ result.write.format("parquet").save(parquet_path)
 
 
 
-#(fireDF.select(F.month(F.col("CallDate")).alias("CallMonth"),
-# F.year(F.col("CallDate")).alias("CallYear"),
- #F.col("CallNumber")
- #)
-#.where(F.col("CallYear") == 2018)
-#.groupBy(F.col("CallMonth"))
-#.agg(F.countDistinct("CallNumber").alias("NumberOfUniqueCalls"))
-#.orderBy(F.col("NumberOfUniqueCalls").desc())
-#.show(10))
-
-# Which neighborhood in San Francisco generated the most fire calls in 2018?
-#callNumber=fireDF.select(max(fireDF.CallNumber)).show()
-#fireDF.select((fireDF.Neighborhood).where(callNumber)).show()
-#fireDF.groupBy('Neighborhood').max(fireDF.CallNumber).show()
-#(fireDF.select("Neighborhood","CallNumber").groupBy(col("Neighborhood")).agg({"CallNumber":"max"}).show())
-
-
-#(fireDF.select("CallNumber","Neighborhood")
- #.groupBy(col("Neighborhood"))
- #.orderBy("CallNumber",ascending=False)
- #.show())
-
-
-#correct (fireDF.select("Neighborhood","CallNumber").groupBy(col("Neighborhood")).agg({"CallNumber":"max"}).show())
-
-
-#fireDF.select("CallNumber").agg({"CallNumber":"max"}).show()
-#result = fireDF.select("CallNumber").orderBy("CallNumber",ascending=False)
-#result.show()
-#fireDF.select("Neighborhood").groupBy(col("Neighborhood")).result.CallNumber() 
-
-#fireDF.groupby("Neighborhood").agg({'CallNumber':'max'}).show()
 
 
 
@@ -155,42 +123,5 @@ result.write.format("parquet").save(parquet_path)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#fireDF.select("Neighborhood","CallNumber").orderBy("CallNumber").show(10)
-#fireDF.groupby("Neighborhood").agg({'CallNumber':'max'}).show()
-#fireDF.select("Neighborhood","CallNumber").where(col(result)).show()
- 
- # Which neighborhoods had the worst response times to fire calls in 2018?
- # Which week in the year in 2018 had the most fire calls?
- # Is there a correlation between neighborhood, zip code, and number of fire calls?
- # How can we use Parquet files or SQL tables to store this data and read it back?
 
 
